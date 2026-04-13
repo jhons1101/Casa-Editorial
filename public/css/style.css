@@ -1,0 +1,11 @@
+.mt {
+    margin: 12px 0;
+}
+
+.form-label {
+    font-weight: 700;
+}
+.col, [class^="col-sm"], [class^="col-md"], [class^="col-lg"] {
+    padding-top: calc(var(--bs-gutter-x) * .2);
+    padding-bottom: calc(var(--bs-gutter-x) * .2);
+}
