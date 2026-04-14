@@ -160,3 +160,17 @@ Inactivar un producto
         Accept: application/json
         Content-Type: application/json
         Autorization: Bearer Token: token que devuelve el servicio de login
+
+# Pregunta
+¿qué cambios harías si este servicio tuviera que soportar 1 millón de usuarios diarios?
+
+# Respuesta --
+Hablando del servicio de productos... Para que pueda soportar un millón de usuarios diarios (que no sabemos el volumen de peticiones que realizarían al dia), realizaría cambios orientados a la escalabilidad, el monitoreo y la optimización de recursos.
+
+A nivel de aplicación, Se tendría que implementar caché para reducir la carga en consultas GET frecuentes. Así como la paginación de resultados en los filtros de busqueda y en lapantalla de lista de productos
+
+A nivel de infraestructura, Se tendría que escalar horizontalmente con contenedores Docker orquestados en Kubernetes,para poder tener multiples instancias de la aplicacion y aplicarle balanceadores de carga para estabilizar la carga de trabajo sobre el server.
+
+A nivel de base de datos, se puede implementar la creación de indices en las tablas, particionar la tabla, generación de procesos almacenados y funciones, optimizacion de las relaciones bajo un MER 3FN.
+
+A nivel de monitoreo, imprecindible generar el monotoreo constante de los recursos y aplicación tanto en docker como en la base de datos para cuantificar el estress y poder garantizar la estabilidad del servicio. Esto también va ligado a pruebas de estress en ambientes controlados, para determinar en que horarios, y que servcios son los de mayor consumo e identificar posibles cuellos de botella.
