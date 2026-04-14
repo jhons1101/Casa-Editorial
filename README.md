@@ -120,6 +120,8 @@ PD: No pude implementar el Swagger por tema de conflictos entre las versiones de
 
 https://web.postman.co/workspace/My-Workspace~2fa5c23c-7222-47af-8f98-69a5f7a4221c/collection/3062233-d822c6a3-b575-492d-ab70-f08d966b9024?action=share&source=copy-link&creator=3062233
 
+También se subió el archivo El-Tiempo.postman_collection.json a la rama Main esta es la colección de peticiones ya listas para usar desde la aplicación corriendo en Docker
+
 Registro de usuarios
 
     POST http://localhost:8080/api/register
