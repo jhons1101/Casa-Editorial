@@ -83,6 +83,12 @@ Lanzar las pruebas unitarias de los endPoints dentro del contenedor
 
     docker exec -it products_app php artisan test
 
+Para probar la version web corriendo desde el contenedor Docker
+
+    http://localhost:8080/productos
+
+
+
 
 ## Servicios web
 En esta URL está la colección de servicios preparados, en tal caso no se pueda acceder, se dejan los link directos a cada servicio.
