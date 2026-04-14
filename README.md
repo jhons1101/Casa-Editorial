@@ -3,7 +3,7 @@
 Casa Editorial El Tiempo Prueba Técnica Backend
 
 
- ![image alt]( [Aquí escriben el permalink de la imagen](https://github.com/jhons1101/Casa-Editorial/blob/c2851dd7e58f60f267ab754c1466b65636486835/consulta%20de%20productos.png) )
+ ![image alt](https://github.com/jhons1101/Casa-Editorial/blob/c2851dd7e58f60f267ab754c1466b65636486835/consulta%20de%20productos.png)
 
 ## Getting started
 ### Importante 
