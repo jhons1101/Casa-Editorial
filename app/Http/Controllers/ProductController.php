@@ -7,34 +7,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\StoreProductoRequest;
 
-/**
- * @OA\Info(
- *     title="API Laravel Documentation",
- *     version="1.0.0",
- *     description="Project YouTube API Laravel 11 Documentation",
- *     @OA\Contact(
- *         email="your-email@gmail.com"
- *     )
- * )
-*/
+
 class ProductController extends Controller
 {
-    /**
-    * @OA\Get(
-    *     path="/api/products",
-    *     summary="Get all products",
-    *     description="Return a list of products using pagination.",
-    *     @OA\Response(
-    *         response=200,
-    *         description="Products List.",
-    *         @OA\JsonContent(
-    *             type="object",
-    *             @OA\Property(property="data", type="array", @OA\Items(ref="#/components/schemas/Product"))
-     *         )
-    *     )
-    * )
-    */
-    public function index()
+    public function index(Request $request)
     {
         $productos = Producto::orderBy('id', 'desc')->get();
         $quantity = $productos->count();
@@ -42,6 +18,11 @@ class ProductController extends Controller
         $description = null;
         $category = null;
         $status = null;
+        
+        if ($request->expectsJson()) {
+            return response()->json($productos);
+        }
+
         return view ('productos.list', compact('productos', 'quantity', 'name', 'description', 'category', 'status'));
     }
 
@@ -60,6 +41,11 @@ class ProductController extends Controller
     {
         $producto = new Producto($request->validated());
         $producto->save();
+        
+        if ($request->expectsJson()) {
+            return response()->json($producto);
+        }
+
         return redirect()->route('productos.index')->with('success', 'Producto creado correctamente');
     }
 
@@ -77,15 +63,25 @@ class ProductController extends Controller
     public function update(StoreProductoRequest  $request, Producto $producto)
     {
         $producto->update($request->validated());
+        
+        if ($request->expectsJson()) {
+            return response()->json($producto);
+        }
+
         return redirect()->route('productos.index')->with('success', 'Producto actualizado correctamente');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Producto $producto)
+    public function destroy(Request $request, Producto $producto)
     {
         $producto->update(['status' => 'Inactivo']);
+        
+        if ($request->expectsJson()) {
+            return response()->json($producto);
+        }
+
         return redirect()->route('productos.index')->with('success', 'Producto inactivado correctamente');
     }
 
@@ -114,8 +110,13 @@ class ProductController extends Controller
             $query->where('status', $request->status);
         }
 
-        $productos = $query->get();
+        $productos = $query->orderBy('id', 'desc')->get();
         $quantity = $productos->count();
+        
+        if ($request->expectsJson()) {
+            return response()->json($productos);
+        }
+
         return view('productos.list', compact('productos', 'quantity', 'name', 'description', 'category', 'status'));
     }
 }
