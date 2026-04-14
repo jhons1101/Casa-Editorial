@@ -1,0 +1,405 @@
+{
+  "info": {
+    "_postman_id": "d822c6a3-b575-492d-ab70-f08d966b9024",
+    "name": "El-Tiempo",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "3062233"
+  },
+  "item": [
+    {
+      "name": "http://localhost:8080/api/register",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "name",
+              "value": "jsve",
+              "type": "text",
+              "uuid": "54447950-a988-4dc5-9d97-684d28d22352"
+            },
+            {
+              "key": "email",
+              "value": "email@example.com",
+              "type": "text",
+              "uuid": "e981cfe5-4ed2-4536-ac41-a5a92113d035"
+            },
+            {
+              "key": "password",
+              "value": "123456",
+              "type": "text",
+              "uuid": "5a5392b7-0c49-4485-a4f6-de3751c7dc75"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8080/api/login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "email",
+              "value": "email@example.com",
+              "type": "text",
+              "uuid": "e981cfe5-4ed2-4536-ac41-a5a92113d035"
+            },
+            {
+              "key": "password",
+              "value": "123456",
+              "type": "text",
+              "uuid": "5a5392b7-0c49-4485-a4f6-de3751c7dc75"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8080/api/logout Unauthenticated",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/logout",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "logout"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8080/api/logout Authenticated",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "2|bL0o4OZT74fen3Sadogonwe5xW3N94n5Dwg38quo",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/logout",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "logout"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8080/api/productos",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "3|Ifney7pRaunSX1jo4Ur3UCdqC9xVMLoGGMQwbZww",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/productos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "productos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8080/api/productos",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "3|Ifney7pRaunSX1jo4Ur3UCdqC9xVMLoGGMQwbZww",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "name",
+              "value": "Libro educativo",
+              "type": "text",
+              "uuid": "6a1550a0-8fe0-4057-bd27-985caf0cc9fa"
+            },
+            {
+              "key": "description",
+              "value": "",
+              "type": "text",
+              "uuid": "adc52869-a9ce-4aa8-a8e8-998cf441f414"
+            },
+            {
+              "key": "price",
+              "value": "45000",
+              "type": "text",
+              "uuid": "5e3845f4-2d28-47b0-b7bb-d4398f64feed"
+            },
+            {
+              "key": "status",
+              "value": "Activo",
+              "type": "text",
+              "uuid": "af55f550-b899-4519-b7a9-cbd13950efca"
+            },
+            {
+              "key": "stock",
+              "value": "120",
+              "type": "text",
+              "uuid": "1ae3787d-d16e-48fa-b137-47e663cfbcea"
+            },
+            {
+              "key": "category",
+              "value": "Producto físico",
+              "type": "text",
+              "uuid": "92458e92-6d68-4e4d-a58e-b5fb1d48c068"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/productos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "productos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8080/api/productos",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "3|Ifney7pRaunSX1jo4Ur3UCdqC9xVMLoGGMQwbZww",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"História de Colombia\",\r\n    \"description\": \"Una novela ambientada en la independencia de Colombia.\",\r\n    \"price\": \"12000\",\r\n    \"status\": \"Activo\",\r\n    \"stock\": \"10\",\r\n    \"category\": \"Producto físico\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/productos/21",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "productos",
+            "21"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8080/api/productos",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "3|Ifney7pRaunSX1jo4Ur3UCdqC9xVMLoGGMQwbZww",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/productos/22",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "productos",
+            "22"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
