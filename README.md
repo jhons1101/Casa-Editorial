@@ -17,11 +17,19 @@ La rama principal es "Master". El aplicativo está cosntruio en laravel API y WE
 ### Instalación
 Clonar el repositorio git
 
-    https://github.com/jhons1101/Casa-Editorial.git
+    git clone https://github.com/jhons1101/Casa-Editorial.git
 
 Carpeta principal del proyecto
 
     Casa Editorial
+
+Ejecutar el comando, para entrar a la carpeta principal
+
+    cd Casa-Editorial
+
+Cambiase a la rama principal, donde están los archivos
+
+    git checkout master
 
 Instalar las dependencias
 
@@ -44,7 +52,7 @@ Creación de la base de datos MYSQL
 
     Nombre de la base de datos: products_db
 
-Ejecutar las migraciones de la base de datos
+Ejecutar las migraciones de la base de datos local
 
     php artisan migrate
 
@@ -60,6 +68,19 @@ Probar el acceso via web
 
     http://localhost:8000
 
+Probamos el acceso via API
+
+    GET http://localhost:8000/api/productos
+
+    Esto nos devolverá un 401 - Unauthorized
+    {
+        "message": "Unauthenticated."
+    }
+
+Detenemos el server virtual
+
+    ctrl + c
+
 *Antes de levantar el Docker, es vital ajustar de nuevo las variables de entorno del archivo .env con los valores predetermiandos, ya que Docker usará los valores para conectarse con la DB que se creará en el contenedor*
 
     DB_CONNECTION=mysql
@@ -69,9 +90,9 @@ Probar el acceso via web
     DB_USERNAME=laravel
     DB_PASSWORD=secret
 
-Generación de las imagenes Docker y el contenedor del proyecto
+Generación de las imagenes Docker y el contenedor del proyecto, Tener en cuenta estar corriendo Docker en tu maquina, para que no presente error al construir las imagenes
 
-    docker-compose up -d --build  
+    docker-compose up -d --build
 
 ### Importante
 Se requiere ejecutar dentro del contenedor de Docker la migración nuevamente
