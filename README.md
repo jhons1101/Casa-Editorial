@@ -2,6 +2,9 @@
 
 Casa Editorial El Tiempo Prueba Técnica Backend
 
+
+ ![image alt]( [Aquí escriben el permalink de la imagen](https://github.com/jhons1101/Casa-Editorial/blob/c2851dd7e58f60f267ab754c1466b65636486835/consulta%20de%20productos.png) )
+
 ## Getting started
 ### Importante 
 La rama principal es "Master". El aplicativo está cosntruio en laravel API y WEB, utiliza el mismo controller para las dos instancias. dependiendo la petición, retorna el json si es API o retorna la vista si es WEB.
